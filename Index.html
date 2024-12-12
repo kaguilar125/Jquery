@@ -11,33 +11,33 @@
     
     <div id="grid1" class="container mt-5">
       <div class="row align-items-center">
-        <div class="col-1 nb">
-          <p>Mercury</p>
+        <div class="col-sm-1">
+          <button class="btn">Mercurey</button>
+        </div>
+        <div class="col-sm-1">
+          <button class="btn">Venus</button>
+        </div>
+        <div class="col-sm-1">
+          <button class="btn">Earth</button>
         </div>
         <div class="col-1 nb">
-          <p>Venus</p>
+          <button class="btn">Mars</button>
         </div>
         <div class="col-1 nb">
-          <p>Earth</p>
+          <button class="btn">Jupitar</button>
         </div>
         <div class="col-1 nb">
-          <p>Mars</p>
+          <button class="btn">Saturn</button>
         </div>
         <div class="col-1 nb">
-          <p>Jupitar</p>
+          <button class="btn">Uranus</button>
         </div>
         <div class="col-1 nb">
-          <p>Saturn</p>
-        </div>
-        <div class="col-1 nb">
-          <p>Uranus</p>
-        </div>
-        <div class="col-1 nb">
-          <p>Neptune</p>
+          <button class="btn">Neptune</button>
         </div>
         
         <div class="col-1 ms-auto nb"><!-- ms-auto moves these to the right -->
-          <p>nasa.gov</p>
+          <button class="btn">nasa.gov</button>
         </div>
       </div>
 
@@ -48,17 +48,9 @@
               <div id="Carousel-slider">
                 <section>
                   <div class="Carousel-slider">
-                    <!--Background images div-->
-                    <div class="slider-item superHero1" data-href="#" ></div>
-                    <div class="slider-item superHero2" data-href="#" ></div>
-                    <div class="slider-item superHero3" data-href="#" ></div>
-                    <div class="slider-item superHero4" data-href="#" ></div>
-                    <div class="slider-item superHero5" data-href="#" ></div>
-                    <div class="slider-item superHero6" data-href="#" ></div>
-                    <div class="slider-item superHero7" data-href="#" ></div>
-                    <div class="slider-item superHero8" data-href="#" ></div>
-
-                    <!--Background images div-->
+                    <div class="slider-item" data-href="#" data-target="_self">Slide 1</div>
+                    <div class="slider-item" data-href="#" data-target="_self">Slide 2</div>
+                    <div class="slider-item" data-href="#" data-target="_self">Slide 3</div>
                   </div>
                 </section>
               </div>
@@ -66,36 +58,46 @@
           </div>
 
       <div id="row3" class="row">
-        <div class="col-3">
+        <div class="col-sm-4">
           <div class="card">
-          <img src="img/health.png" class="rounded float-start icon-img1" alt="...">
           <div class="card-body">
             <h5 class="card-title">Health</h5>
             <p class="card-text">You can insure not only<br>yourself, but also your loved<br>ones and pets.<br/></p>
           </div>
         </div>
       </div>
-        <div class="col-3">
+        <div class="col-sm-4">
           <div class="card">
-          <img src="img/finance.png" class="rounded float-start icon-img2" alt="...">
           <div class="card-body">
             <h5 class="card-title">Finance</h5>
             <p class="card-text">Your money will always be<br>well protected, no matter<br>what happens.<br/></p>
           </div>
         </div>
       </div>
-        <div class="col-3">
+        <div class="col-sm-4">
           <div class="card">
-          <img src="img/travel.png" class="rounded float-start icon-img3" alt="...">
           <div class="card-body">
             <h5 class="card-title">Travel</h5>
             <p class="card-text">Skis, a board, maybe a<br>parachute? Try anything you<br>want, and we'll take care of you.<br/></p>
           </div>
         </div>
       </div>
-        <div class="col-3">
+      </div>
+
+      <div id="row5" class="row">
+        <div class="col-sm-12">
           <div class="card">
-            <img src="img/property.png" class="rounded float-start icon-img4" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Property</h5>
+              <p class="card-text">Flooded or had something<br> stolen? Yes, it's really<br> awful, but we can help.<br/></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="row6" class="row">
+        <div class="col-sm-12">
+          <div class="card">
             <div class="card-body">
               <h5 class="card-title">Property</h5>
               <p class="card-text">Flooded or had something<br> stolen? Yes, it's really<br> awful, but we can help.<br/></p>
@@ -107,4 +109,6 @@
   </body>
 
   <script src="script.js"></script>
+  <script src="path/to/microslider.js"></script>
+<script src="path/to/hammer.min.js"></script>
 </html>

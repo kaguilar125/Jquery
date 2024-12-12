@@ -94,10 +94,27 @@ html {
             background: #e4e5e6;
         }
 
+        .Carousel-slider {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            height: 300px; /* Adjust as needed */
+          }
+          
+          .slider-item {
+            min-width: 100%;
+            height: 100%;
+            text-align: center;
+            background: lightgray; /* Example background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+          }
+
 .superHero1 {background-image: url(img/Mercury_in_true_color.jpg); border-radius: 50px !important;}
 
-.superHero2 {background-image: url(img/Venus_2_Approach_Image.jpg); border-radius: 50px !important;
-}
+.superHero2 {background-image: url(img/Venus_2_Approach_Image.jpg); border-radius: 50px !important;}
 
 .superHero3 {background-image: url(img/The_Earth_seen_from_Apollo_17.jpg); border-radius: 50px !important;}
 
