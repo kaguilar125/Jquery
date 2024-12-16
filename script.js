@@ -1,62 +1,37 @@
-// $('li').hide();
 
-// function myFunction(){
-//     $('li').hide().fadeIn(500);
-
-//     console.log($('#free').html());
-//     $('li.hot').css("color", "red");
-//     $('li.cold').css("color", "blue");
-
-// }
-
-ocument.addEventListener('DOMContentLoaded', () => {
-    // Slider Begin
-    const CaroS = document.querySelector('.Carousel-slider');
-    const CaroSlider = new MicroSlider(CaroS, { indicators: true, IndicatorText: '' });
-    const hammer = new Hammer(CaroS);
-    const CaroSTimer = 2000;
-    let CaroAutoplay = setInterval(() => CaroSlider.next(), CaroSTimer);
-
-    // Mouseenter Event
-    CaroS.onmouseenter = () => {
-        clearInterval(CaroAutoplay);
-        console.log('Mouseenter detected');
-    };
-
-    // Mouseleave Event
-    CaroS.onmouseleave = () => {
-        clearInterval(CaroAutoplay);
-        CaroAutoplay = setInterval(() => CaroSlider.next(), CaroSTimer);
-        console.log('Mouseleave detected');
-    };
-
-    // Mouseclick event
-    CaroS.onclick = () => {
-        clearInterval(CaroAutoplay);
-        console.log('Mouse click detected');
-    };
-
-    // Gesture Tap Event
-    hammer.on('tap', () => {
-        clearInterval(CaroAutoplay);
-        console.log('Tap gesture detected');
-    });
-
-    // Gesture Swipe Event
-    hammer.on('swipe', () => {
-        clearInterval(CaroAutoplay);
-        CaroAutoplay = setInterval(() => CaroSlider.next(), CaroSTimer);
-        console.log('Swipe gesture detected');
-    });
-
-    let slideLink = document.querySelectorAll('.slider-item');
-    if (slideLink) {
-        slideLink.forEach(el => el.addEventListener('click', e => {
-            e.preventDefault();
-            let href = el.dataset.href;
-            let target = el.dataset.target;
-            if (href !== '#') window.open(href, target);
-        }));
+let items = document.querySelectorAll('.slider .item');
+let active = 3;
+function loadShow(){
+    items[active].style.transform = `none`;
+    items[active].style.zIndex = 1;
+    items[active].style.filter = 'none';
+    items[active].style.opacity = 1;
+    // show after
+    let stt = 0;
+    for(var i = active + 1; i < items.length; i ++){
+        stt++;
+        items[i].style.transform = `translateX(${120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(-1deg)`;
+        items[i].style.zIndex = -stt;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = stt > 2 ? 0 : 0.6;
     }
-    // Slider End
-});
+     stt = 0;
+    for(var i = (active - 1); i >= 0; i --){
+        stt++;
+        items[i].style.transform = `translateX(${-120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(1deg)`;
+        items[i].style.zIndex = -stt;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = stt > 2 ? 0 : 0.6;
+    }
+}
+loadShow();
+let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+next.onclick = function(){
+   active = active + 1 < items.length ?  active + 1 : active;
+   loadShow();
+}
+prev.onclick = function(){
+    active = active - 1 >= 0 ? active -1 : active;
+    loadShow();
+}
