@@ -1,6 +1,6 @@
-
+// Begining of Slider
 let items = document.querySelectorAll('.slider .item');
-let active = 3;
+let active = 2;
 function loadShow(){
     items[active].style.transform = `none`;
     items[active].style.zIndex = 1;
@@ -35,3 +35,5 @@ prev.onclick = function(){
     active = active - 1 >= 0 ? active -1 : active;
     loadShow();
 }
+// End of Slider
+
